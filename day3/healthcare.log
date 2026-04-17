@@ -1,2 +1,58 @@
 2026-04-16 09:47:57,551 - healthcare_logger - INFO - app run
 2026-04-16 09:56:32,454 - healthcare_logger - INFO - app run
+2026-04-17 06:34:48,737 - healthcare_logger - INFO - app doctor agent is running...
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Adding doctor: Doctor(id=7981, name='Cynthia Myers', specialization='Careers adviser')
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Fetching doctor with ID: 7981
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Doctor added: Doctor(id=7981, name='Cynthia Myers', specialization='Careers adviser')
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - app patient agent is running...
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Adding patient: Patient(id=2140, name='Heidi Lyons', dob='1913-10-03', ailment='Voice listen college left.')
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Fetching patient by ID: 2140
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - Patient added: Patient(id=2140, name='Heidi Lyons', dob='1913-10-03', ailment='Voice listen college left.')
+2026-04-17 06:34:48,738 - healthcare_logger - INFO - app appointment agent is running...
+2026-04-17 06:34:48,739 - healthcare_logger - INFO - Fetching doctor with ID: 7981
+2026-04-17 06:34:48,739 - healthcare_logger - INFO - Fetching patient by ID: 2140
+2026-04-17 06:34:48,739 - healthcare_logger - INFO - Adding appointment: Appointment(id=2529, date='1986-04-02', time='16:35:57', doctor=Doctor(id=7981, name='Cynthia Myers', specialization='Careers adviser'), patient=Patient(id=2140, name='Heidi Lyons', dob='1913-10-03', ailment='Voice listen college left.'))
+2026-04-17 06:34:48,739 - healthcare_logger - INFO - Fetching appointment with ID: 2529
+2026-04-17 06:34:48,739 - healthcare_logger - INFO - Appointment added: Appointment(id=2529, date='1986-04-02', time='16:35:57', doctor=Doctor(id=7981, name='Cynthia Myers', specialization='Careers adviser'), patient=Patient(id=2140, name='Heidi Lyons', dob='1913-10-03', ailment='Voice listen college left.'))
+2026-04-17 06:34:55,902 - healthcare_logger - INFO - app doctor agent is running...
+2026-04-17 06:34:55,902 - healthcare_logger - INFO - Adding doctor: Doctor(id=3923, name='Emily Gardner', specialization='Armed forces technical officer')
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Fetching doctor with ID: 3923
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Doctor added: Doctor(id=3923, name='Emily Gardner', specialization='Armed forces technical officer')
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - app patient agent is running...
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Adding patient: Patient(id=4007, name='Charles Jackson', dob='1951-06-23', ailment='Agreement eight knowledge follow continue appear despite.')
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Fetching patient by ID: 4007
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Patient added: Patient(id=4007, name='Charles Jackson', dob='1951-06-23', ailment='Agreement eight knowledge follow continue appear despite.')
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - app appointment agent is running...
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Fetching doctor with ID: 3923
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Fetching patient by ID: 4007
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Adding appointment: Appointment(id=1960, date='2016-11-12', time='01:17:17', doctor=Doctor(id=3923, name='Emily Gardner', specialization='Armed forces technical officer'), patient=Patient(id=4007, name='Charles Jackson', dob='1951-06-23', ailment='Agreement eight knowledge follow continue appear despite.'))
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Fetching appointment with ID: 1960
+2026-04-17 06:34:55,903 - healthcare_logger - INFO - Appointment added: Appointment(id=1960, date='2016-11-12', time='01:17:17', doctor=Doctor(id=3923, name='Emily Gardner', specialization='Armed forces technical officer'), patient=Patient(id=4007, name='Charles Jackson', dob='1951-06-23', ailment='Agreement eight knowledge follow continue appear despite.'))
+2026-04-17 06:35:09,271 - healthcare_logger - INFO - app doctor agent is running...
+2026-04-17 06:35:09,271 - healthcare_logger - INFO - Adding doctor: Doctor(id=9135, name='Anthony Buchanan', specialization='Speech and language therapist')
+2026-04-17 06:35:09,271 - healthcare_logger - INFO - Fetching doctor with ID: 9135
+2026-04-17 06:35:09,271 - healthcare_logger - INFO - Doctor added: Doctor(id=9135, name='Anthony Buchanan', specialization='Speech and language therapist')
+2026-04-17 06:35:09,271 - healthcare_logger - INFO - app patient agent is running...
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Adding patient: Patient(id=2829, name='Chris Mcdaniel', dob='1949-06-27', ailment='Chance difference player.')
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Fetching patient by ID: 2829
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Patient added: Patient(id=2829, name='Chris Mcdaniel', dob='1949-06-27', ailment='Chance difference player.')
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - app appointment agent is running...
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Fetching doctor with ID: 9135
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Fetching patient by ID: 2829
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Adding appointment: Appointment(id=1234, date='2012-04-26', time='16:12:55', doctor=Doctor(id=9135, name='Anthony Buchanan', specialization='Speech and language therapist'), patient=Patient(id=2829, name='Chris Mcdaniel', dob='1949-06-27', ailment='Chance difference player.'))
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Fetching appointment with ID: 1234
+2026-04-17 06:35:09,272 - healthcare_logger - INFO - Appointment added: Appointment(id=1234, date='2012-04-26', time='16:12:55', doctor=Doctor(id=9135, name='Anthony Buchanan', specialization='Speech and language therapist'), patient=Patient(id=2829, name='Chris Mcdaniel', dob='1949-06-27', ailment='Chance difference player.'))
+2026-04-17 06:36:12,241 - healthcare_logger - INFO - app doctor agent is running...
+2026-04-17 06:36:12,241 - healthcare_logger - INFO - Adding doctor: Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse')
+2026-04-17 06:36:12,241 - healthcare_logger - INFO - Fetching doctor with ID: 8455
+2026-04-17 06:36:12,241 - healthcare_logger - INFO - Doctor added: Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse')
+2026-04-17 06:36:12,241 - healthcare_logger - INFO - app patient agent is running...
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Adding patient: Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.')
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Fetching patient by ID: 4196
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Patient added: Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.')
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - app appointment agent is running...
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Fetching doctor with ID: 8455
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Fetching patient by ID: 4196
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Adding appointment: Appointment(id=3410, date='1983-06-19', time='09:24:53', doctor=Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse'), patient=Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.'))
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Fetching appointment with ID: 3410
+2026-04-17 06:36:12,242 - healthcare_logger - INFO - Appointment added: Appointment(id=3410, date='1983-06-19', time='09:24:53', doctor=Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse'), patient=Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.'))

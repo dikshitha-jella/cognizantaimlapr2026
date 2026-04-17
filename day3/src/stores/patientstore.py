@@ -3,12 +3,11 @@ create patient store to manage patient data
 """
 import sys
 import os
-from models.patient import Patient
+from ..models.patient import Patient
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))             
 sys.path.append(project_root)
 from conf.logger_conf import setup_logger
 logger = setup_logger() 
-from patient import Patient
 class PatientStore:
     """
     patient store to manage patient data

@@ -1,9 +1,9 @@
 """
 create appointment
 """
-from datetime import datetime
-from doctore import Doctor
-from patient import Patient
+from datetime import datetime, date, time
+from .doctor import Doctor
+from .patient import Patient
 class Appointment:
     """
     appointment class to represent a healthcare appointment
