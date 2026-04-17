@@ -56,3 +56,27 @@
 2026-04-17 06:36:12,242 - healthcare_logger - INFO - Adding appointment: Appointment(id=3410, date='1983-06-19', time='09:24:53', doctor=Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse'), patient=Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.'))
 2026-04-17 06:36:12,242 - healthcare_logger - INFO - Fetching appointment with ID: 3410
 2026-04-17 06:36:12,242 - healthcare_logger - INFO - Appointment added: Appointment(id=3410, date='1983-06-19', time='09:24:53', doctor=Doctor(id=8455, name='Paul Brewer', specialization='Learning disability nurse'), patient=Patient(id=4196, name='Christopher Ferguson', dob='1910-05-02', ailment='Pass charge outside image move reduce.'))
+2026-04-17 06:43:37,156 - healthcare_logger - INFO - app doctor agent is running...
+2026-04-17 06:43:37,156 - healthcare_logger - INFO - Adding doctor: Doctor(id=754, name='Dustin Miller', specialization='Designer, jewellery')
+2026-04-17 06:43:37,156 - healthcare_logger - INFO - Fetching doctor with ID: 754
+2026-04-17 06:43:37,156 - healthcare_logger - INFO - Doctor added: Doctor(id=754, name='Dustin Miller', specialization='Designer, jewellery')
+2026-04-17 06:43:37,156 - healthcare_logger - INFO - app patient agent is running...
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Adding patient: Patient(id=2186, name='Thomas Brown', dob='2019-04-25', ailment='Build million will soon.')
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Fetching patient by ID: 2186
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Patient added: Patient(id=2186, name='Thomas Brown', dob='2019-04-25', ailment='Build million will soon.')
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - app appointment agent is running...
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Fetching doctor with ID: 754
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Fetching patient by ID: 2186
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Adding appointment: Appointment(id=6632, date='1995-11-04', time='03:19:24', doctor=Doctor(id=754, name='Dustin Miller', specialization='Designer, jewellery'), patient=Patient(id=2186, name='Thomas Brown', dob='2019-04-25', ailment='Build million will soon.'))
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Fetching appointment with ID: 6632
+2026-04-17 06:43:37,157 - healthcare_logger - INFO - Appointment added: Appointment(id=6632, date='1995-11-04', time='03:19:24', doctor=Doctor(id=754, name='Dustin Miller', specialization='Designer, jewellery'), patient=Patient(id=2186, name='Thomas Brown', dob='2019-04-25', ailment='Build million will soon.'))
+2026-04-17 11:50:07,714 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 11:50:07,715 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 11:50:17,516 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 11:50:17,518 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 11:51:43,220 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 12:03:39,483 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 12:09:11,311 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 12:09:31,165 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 12:09:44,618 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number
+2026-04-17 12:09:53,151 - healthcare_logger - ERROR - Error updating mobile number: Mobile number must be a 10-digit number

@@ -28,16 +28,16 @@ class PatientStore:
         for patient in self.patients:
             if patient.id == patient_id:
                 return patient
-        return patientnotfoundexception(f"Patient with ID {patient_id} not found")
+        raise PatientNotFoundException(f"Patient with ID {patient_id} not found")
     
-    def update_patient(self, patient_id: int, name: str = None, age: int = None):
+    def update_patient(self, patient_id: int, name: str = None, ailment: str = None):
         logger.info(f"Updating patient with ID: {patient_id}")
         patient = self.get_patient_by_id(patient_id)
         if patient:
             if name:
                 patient.name = name
-            if age:
-                patient.age = age
+            if ailment:
+                patient.ailment = ailment
 
     def delete_patient(self, patient_id: int):
         logger.info(f"Deleting patient with ID: {patient_id}")
