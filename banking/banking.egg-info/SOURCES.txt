@@ -1,6 +1,0 @@
-pyproject.toml
-banking.egg-info/PKG-INFO
-banking.egg-info/SOURCES.txt
-banking.egg-info/dependency_links.txt
-banking.egg-info/requires.txt
-banking.egg-info/top_level.txt
