@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Banking Management System Documentation &#8212; Banking Management System 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="banking-management-system-documentation">
+<h1>Banking Management System Documentation<a class="headerlink" href="#banking-management-system-documentation" title="Link to this heading">¶</a></h1>
+<p>Welcome to the Banking Management System documentation. This project provides a comprehensive banking system with support for different account types, customer management, and transactions.</p>
+<div class="toctree-wrapper compound">
+</div>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>The Banking Management System is a Python-based application that manages:</p>
+<ul class="simple">
+<li><p><strong>Customers</strong>: Individual and Corporate customers</p></li>
+<li><p><strong>Accounts</strong>: Savings and Current accounts</p></li>
+<li><p><strong>Transactions</strong>: Direct debits and external transactions</p></li>
+<li><p><strong>Banking Groups</strong>: Management of multiple accounts</p></li>
+</ul>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Customer account management</p></li>
+<li><p>Multiple account types (Savings, Current)</p></li>
+<li><p>Transaction processing and tracking</p></li>
+<li><p>Direct debit payments</p></li>
+<li><p>External transaction handling</p></li>
+<li><p>Role-based access and authentication</p></li>
+</ul>
+</section>
+<section id="quick-start">
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h3>
+<p>To install the project:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;.[dev]&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="running-tests">
+<h3>Running Tests<a class="headerlink" href="#running-tests" title="Link to this heading">¶</a></h3>
+<p>To run the test suite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="n">tests</span><span class="o">/</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+</section>
+<section id="view-reports">
+<h3>View Reports<a class="headerlink" href="#view-reports" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Test Report</strong>: Open <cite>reports.html</cite></p></li>
+<li><p><strong>Coverage Report</strong>: Open <cite>htmlcov/index.html</cite></p></li>
+</ul>
+</section>
+</section>
+<section id="api-reference">
+<h2>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="module-src.models">
+<span id="modules"></span><h2>Modules<a class="headerlink" href="#module-src.models" title="Link to this heading">¶</a></h2>
+<p>Models package for BankingSystem.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.ABCBankingGroup">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">ABCBankingGroup</span></span><a class="reference internal" href="_modules/src/models/abc_banking_group.html#ABCBankingGroup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ABCBankingGroup" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A banking group that manages multiple accounts.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.ABCBankingGroup.accounts">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">accounts</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><span class="pre">Account</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#src.models.ABCBankingGroup.accounts" title="Link to this definition">¶</a></dt>
+<dd><p>Return a copy of the managed accounts.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.ABCBankingGroup.add_account">
+<span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/abc_banking_group.html#ABCBankingGroup.add_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ABCBankingGroup.add_account" title="Link to this definition">¶</a></dt>
+<dd><p>Add an account to the banking group.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><em>Account</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.ABCBankingGroup.remove_account">
+<span class="sig-name descname"><span class="pre">remove_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/abc_banking_group.html#ABCBankingGroup.remove_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ABCBankingGroup.remove_account" title="Link to this definition">¶</a></dt>
+<dd><p>Remove an account by its number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.ABCBankingGroup.find_account">
+<span class="sig-name descname"><span class="pre">find_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/abc_banking_group.html#ABCBankingGroup.find_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ABCBankingGroup.find_account" title="Link to this definition">¶</a></dt>
+<dd><p>Find an account by number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><em>Account</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Account">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/account.html#Account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Account" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A bank account with running totals and transaction history.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>open_date</strong> (<em>date</em>)</p></li>
+<li><p><strong>initial_balance</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Account.account_number">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">account_number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Account.account_number" title="Link to this definition">¶</a></dt>
+<dd><p>The unique account identifier.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Account.open_date">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">open_date</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">date</span></span><a class="headerlink" href="#src.models.Account.open_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date the account was opened.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Account.running_totals">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">running_totals</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#src.models.Account.running_totals" title="Link to this definition">¶</a></dt>
+<dd><p>The current balance of the account.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Account.show_customer_transactions">
+<span class="sig-name descname"><span class="pre">show_customer_transactions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/account.html#Account.show_customer_transactions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Account.show_customer_transactions" title="Link to this definition">¶</a></dt>
+<dd><p>Return the list of transactions for this account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>List</em>[<a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><em>Transaction</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Account.add_transaction">
+<span class="sig-name descname"><span class="pre">add_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/account.html#Account.add_transaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Account.add_transaction" title="Link to this definition">¶</a></dt>
+<dd><p>Add a transaction and update the account balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>transaction</strong> (<a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><em>Transaction</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Corporate">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Corporate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/corporate.html#Corporate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Corporate" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Customer" title="src.models.customer.Customer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Customer</span></code></a></p>
+<p>A corporate customer with a company type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>address</strong> (<em>str</em>)</p></li>
+<li><p><strong>contact_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>email</strong> (<em>str</em>)</p></li>
+<li><p><strong>password</strong> (<em>str</em>)</p></li>
+<li><p><strong>company_type</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Corporate.company_type">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">company_type</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Corporate.company_type" title="Link to this definition">¶</a></dt>
+<dd><p>The legal company type for the corporate customer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Customer">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/customer.html#Customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Customer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A customer with accounts and contact information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>address</strong> (<em>str</em>)</p></li>
+<li><p><strong>contact_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>email</strong> (<em>str</em>)</p></li>
+<li><p><strong>password</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Customer.account_number">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">account_number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Customer.account_number" title="Link to this definition">¶</a></dt>
+<dd><p>The customer account identifier.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Customer.name">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Customer.name" title="Link to this definition">¶</a></dt>
+<dd><p>The customer full name.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Customer.address">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">address</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Customer.address" title="Link to this definition">¶</a></dt>
+<dd><p>The customer address.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Customer.contact_number">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">contact_number</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Customer.contact_number" title="Link to this definition">¶</a></dt>
+<dd><p>The customer’s contact phone number.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Customer.email">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">email</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Customer.email" title="Link to this definition">¶</a></dt>
+<dd><p>The customer’s email address.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Customer.add_account">
+<span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/customer.html#Customer.add_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Customer.add_account" title="Link to this definition">¶</a></dt>
+<dd><p>Link an account to this customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Customer.remove_account">
+<span class="sig-name descname"><span class="pre">remove_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/customer.html#Customer.remove_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Customer.remove_account" title="Link to this definition">¶</a></dt>
+<dd><p>Unlink an account from this customer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Customer.total_number_of_customers">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">total_number_of_customers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/customer.html#Customer.total_number_of_customers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Customer.total_number_of_customers" title="Link to this definition">¶</a></dt>
+<dd><p>Return the total number of created customers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.CurrentAccount">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">CurrentAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overdraft_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/current_account.html#CurrentAccount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.CurrentAccount" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">Account</span></code></a></p>
+<p>A current account that supports overdraft.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>open_date</strong> (<em>date</em>)</p></li>
+<li><p><strong>overdraft_limit</strong> (<em>float</em>)</p></li>
+<li><p><strong>initial_balance</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.CurrentAccount.overdraft_limit">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">overdraft_limit</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#src.models.CurrentAccount.overdraft_limit" title="Link to this definition">¶</a></dt>
+<dd><p>The allowed overdraft limit for the account.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.CurrentAccount.can_withdraw">
+<span class="sig-name descname"><span class="pre">can_withdraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/current_account.html#CurrentAccount.can_withdraw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.CurrentAccount.can_withdraw" title="Link to this definition">¶</a></dt>
+<dd><p>Return whether the requested withdrawal is allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>amount</strong> (<em>float</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.DirectDebit">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">DirectDebit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payment_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/direct_debit.html#DirectDebit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.DirectDebit" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transaction</span></code></a></p>
+<p>A transaction scheduled for direct debit on a payment date.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>float</em>)</p></li>
+<li><p><strong>sender</strong> (<em>str</em>)</p></li>
+<li><p><strong>receiver</strong> (<em>str</em>)</p></li>
+<li><p><strong>payment_date</strong> (<em>date</em>)</p></li>
+<li><p><strong>timestamp</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.DirectDebit.payment_date">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">payment_date</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">date</span></span><a class="headerlink" href="#src.models.DirectDebit.payment_date" title="Link to this definition">¶</a></dt>
+<dd><p>The date the direct debit will be processed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.ExternalTransaction">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">ExternalTransaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_postcode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/external_transaction.html#ExternalTransaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.ExternalTransaction" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Transaction</span></code></a></p>
+<p>A transaction executed through an external branch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>float</em>)</p></li>
+<li><p><strong>sender</strong> (<em>str</em>)</p></li>
+<li><p><strong>receiver</strong> (<em>str</em>)</p></li>
+<li><p><strong>branch_name</strong> (<em>str</em>)</p></li>
+<li><p><strong>branch_address</strong> (<em>str</em>)</p></li>
+<li><p><strong>branch_postcode</strong> (<em>str</em>)</p></li>
+<li><p><strong>branch_code</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.ExternalTransaction.branch_name">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">branch_name</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.ExternalTransaction.branch_name" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the external branch.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.ExternalTransaction.branch_address">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">branch_address</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.ExternalTransaction.branch_address" title="Link to this definition">¶</a></dt>
+<dd><p>The address of the external branch.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.ExternalTransaction.branch_postcode">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">branch_postcode</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.ExternalTransaction.branch_postcode" title="Link to this definition">¶</a></dt>
+<dd><p>The postcode of the external branch.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.ExternalTransaction.branch_code">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">branch_code</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.ExternalTransaction.branch_code" title="Link to this definition">¶</a></dt>
+<dd><p>The branch code for the external transaction.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Individual">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Individual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">surname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_of_birth</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/individual.html#Individual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Individual" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Customer" title="src.models.customer.Customer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Customer</span></code></a></p>
+<p>A customer who is an individual person.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+<li><p><strong>address</strong> (<em>str</em>)</p></li>
+<li><p><strong>contact_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>email</strong> (<em>str</em>)</p></li>
+<li><p><strong>password</strong> (<em>str</em>)</p></li>
+<li><p><strong>surname</strong> (<em>str</em>)</p></li>
+<li><p><strong>gender</strong> (<em>str</em>)</p></li>
+<li><p><strong>date_of_birth</strong> (<em>date</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Individual.surname">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">surname</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Individual.surname" title="Link to this definition">¶</a></dt>
+<dd><p>The customer’s surname.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Individual.gender">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">gender</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#src.models.Individual.gender" title="Link to this definition">¶</a></dt>
+<dd><p>The customer’s gender.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Individual.date_of_birth">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">date_of_birth</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">date</span></span><a class="headerlink" href="#src.models.Individual.date_of_birth" title="Link to this definition">¶</a></dt>
+<dd><p>The customer’s date of birth.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Individual.work_out_age">
+<span class="sig-name descname"><span class="pre">work_out_age</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/individual.html#Individual.work_out_age"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Individual.work_out_age" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the customer’s age from date of birth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Menu">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Menu</span></span><a class="reference internal" href="_modules/src/models/menu.html#Menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A service layer for managing customers, accounts, and transactions.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Menu.transaction_list">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">transaction_list</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><span class="pre">Transaction</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#src.models.Menu.transaction_list" title="Link to this definition">¶</a></dt>
+<dd><p>All recorded transactions.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Menu.customer_account_list">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">customer_account_list</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><span class="pre">Account</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#src.models.Menu.customer_account_list" title="Link to this definition">¶</a></dt>
+<dd><p>Open customer accounts.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.Menu.customer_list">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">customer_list</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#src.models.Customer" title="src.models.customer.Customer"><span class="pre">Customer</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#src.models.Menu.customer_list" title="Link to this definition">¶</a></dt>
+<dd><p>Registered customers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.initiate_transaction">
+<span class="sig-name descname"><span class="pre">initiate_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">transaction</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.initiate_transaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.initiate_transaction" title="Link to this definition">¶</a></dt>
+<dd><p>Record a transaction in the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>transaction</strong> (<a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><em>Transaction</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.add_customer">
+<span class="sig-name descname"><span class="pre">add_customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">customer</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.add_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.add_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Add a new customer to the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>customer</strong> (<a class="reference internal" href="#src.models.Customer" title="src.models.customer.Customer"><em>Customer</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.delete_customer">
+<span class="sig-name descname"><span class="pre">delete_customer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.delete_customer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.delete_customer" title="Link to this definition">¶</a></dt>
+<dd><p>Remove a customer by account number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.open_account">
+<span class="sig-name descname"><span class="pre">open_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.open_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.open_account" title="Link to this definition">¶</a></dt>
+<dd><p>Open a customer account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account</strong> (<a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><em>Account</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.close_account">
+<span class="sig-name descname"><span class="pre">close_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.close_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.close_account" title="Link to this definition">¶</a></dt>
+<dd><p>Close an account by account number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>account_number</strong> (<em>str</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.edit_customer_details">
+<span class="sig-name descname"><span class="pre">edit_customer_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.edit_customer_details"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.edit_customer_details" title="Link to this definition">¶</a></dt>
+<dd><p>Update customer contact information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>address</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>contact_number</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+<li><p><strong>email</strong> (<em>str</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.login">
+<span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.login"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.login" title="Link to this definition">¶</a></dt>
+<dd><p>Check whether customer credentials are valid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>password</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Menu.logout">
+<span class="sig-name descname"><span class="pre">logout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/menu.html#Menu.logout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Menu.logout" title="Link to this definition">¶</a></dt>
+<dd><p>Placeholder for logout behavior.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.SavingsAccount">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">SavingsAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">account_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">open_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interest_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_balance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/savings_account.html#SavingsAccount"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.SavingsAccount" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#src.models.Account" title="src.models.account.Account"><code class="xref py py-class docutils literal notranslate"><span class="pre">Account</span></code></a></p>
+<p>A savings account with an interest rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>account_number</strong> (<em>str</em>)</p></li>
+<li><p><strong>open_date</strong> (<em>date</em>)</p></li>
+<li><p><strong>interest_rate</strong> (<em>float</em>)</p></li>
+<li><p><strong>initial_balance</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="src.models.SavingsAccount.interest_rate">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">interest_rate</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#src.models.SavingsAccount.interest_rate" title="Link to this definition">¶</a></dt>
+<dd><p>The interest rate applied to the account balance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.SavingsAccount.calculate_interest">
+<span class="sig-name descname"><span class="pre">calculate_interest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/savings_account.html#SavingsAccount.calculate_interest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.SavingsAccount.calculate_interest" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate interest based on the current balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="src.models.Transaction">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">src.models.</span></span><span class="sig-name descname"><span class="pre">Transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/transaction.html#Transaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Transaction" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A financial transaction between sender and receiver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>float</em>)</p></li>
+<li><p><strong>sender</strong> (<em>str</em>)</p></li>
+<li><p><strong>receiver</strong> (<em>str</em>)</p></li>
+<li><p><strong>timestamp</strong> (<em>datetime</em><em> | </em><em>None</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Transaction.deposit_money">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">deposit_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/transaction.html#Transaction.deposit_money"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Transaction.deposit_money" title="Link to this definition">¶</a></dt>
+<dd><p>Create a deposit transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>float</em>)</p></li>
+<li><p><strong>sender</strong> (<em>str</em>)</p></li>
+<li><p><strong>receiver</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><em>Transaction</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.models.Transaction.withdraw_money">
+<span class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">withdraw_money</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">receiver</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/models/transaction.html#Transaction.withdraw_money"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.models.Transaction.withdraw_money" title="Link to this definition">¶</a></dt>
+<dd><p>Create a withdrawal transaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amount</strong> (<em>float</em>)</p></li>
+<li><p><strong>sender</strong> (<em>str</em>)</p></li>
+<li><p><strong>receiver</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#src.models.Transaction" title="src.models.transaction.Transaction"><em>Transaction</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Banking Management System</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Dikshitha.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.1.0</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
