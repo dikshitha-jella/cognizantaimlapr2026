@@ -1,27 +1,29 @@
+"""Current account model for BankingSystem."""
+
+from datetime import date
+
 from .account import Account
 
 
 class CurrentAccount(Account):
-    def __init__(self, account_number, customer, balance=0.0, overdraft_limit=1000.0):
-        super().__init__(account_number, customer, balance, "Current")
-        self.overdraft_limit = overdraft_limit
+    """A current account that supports overdraft."""
 
-    def deposit(self, amount):
-        if amount > 0 and self.is_active:
-            self.balance += amount
-            return True
-        return False
+    def __init__(self, account_number: str, open_date: date, overdraft_limit: float = 0.0, initial_balance: float = 0.0):
+        """Create a current account."""
+        super().__init__(account_number, open_date, initial_balance)
+        self._overdraft_limit = overdraft_limit
 
-    def withdraw(self, amount):
-        if amount > 0 and self.is_active and (self.balance - amount) >= -self.overdraft_limit:
-            self.balance -= amount
-            return True
-        return False
+    @property
+    def overdraft_limit(self) -> float:
+        """The allowed overdraft limit for the account."""
+        return self._overdraft_limit
 
-    def get_overdraft_limit(self):
-        """Get the overdraft limit"""
-        return self.overdraft_limit
+    def can_withdraw(self, amount: float) -> bool:
+        """Return whether the requested withdrawal is allowed."""
+        return self.running_totals + self.overdraft_limit >= amount
 
-    def set_overdraft_limit(self, limit):
-        """Set the overdraft limit"""
-        self.overdraft_limit = limit
+    def __repr__(self) -> str:
+        return (
+            f"CurrentAccount(account_number={self.account_number!r}, open_date={self.open_date!r}, "
+            f"running_totals={self.running_totals!r}, overdraft_limit={self.overdraft_limit!r})"
+        )

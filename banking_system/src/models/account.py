@@ -1,45 +1,47 @@
-from abc import ABC, abstractmethod
-from datetime import datetime
+"""Account model for BankingSystem."""
+
+from datetime import date
+from typing import List
+
+from .transaction import Transaction
 
 
-class Account(ABC):
-    def __init__(self, account_number, customer, balance=0.0, account_type=""):
-        self.account_number = account_number
-        self.customer = customer
-        self.balance = balance
-        self.account_type = account_type
-        self.created_date = datetime.now()
-        self.last_transaction_date = None
-        self.is_active = True
-        self.transactions = []
+class Account:
+    """A bank account with running totals and transaction history."""
 
-    @abstractmethod
-    def deposit(self, amount):
-        pass
+    def __init__(self, account_number: str, open_date: date, initial_balance: float = 0.0):
+        """Create a new account."""
+        self._account_number = account_number
+        self._open_date = open_date
+        self._running_totals = initial_balance
+        self._transactions: List[Transaction] = []
 
-    @abstractmethod
-    def withdraw(self, amount):
-        pass
+    @property
+    def account_number(self) -> str:
+        """The unique account identifier."""
+        return self._account_number
 
-    def get_balance(self):
-        return self.balance
+    @property
+    def open_date(self) -> date:
+        """The date the account was opened."""
+        return self._open_date
 
-    def deactivate(self):
-        """Deactivate the account"""
-        self.is_active = False
+    @property
+    def running_totals(self) -> float:
+        """The current balance of the account."""
+        return self._running_totals
 
-    def activate(self):
-        """Activate the account"""
-        self.is_active = True
+    def show_customer_transactions(self) -> List[Transaction]:
+        """Return the list of transactions for this account."""
+        return list(self._transactions)
 
-    def add_transaction(self, transaction):
-        """Add transaction to history"""
-        self.transactions.append(transaction)
-        self.last_transaction_date = datetime.now()
+    def add_transaction(self, transaction: Transaction) -> None:
+        """Add a transaction and update the account balance."""
+        self._transactions.append(transaction)
+        self._running_totals += transaction.amount
 
-    def get_transactions(self):
-        """Get all transactions"""
-        return self.transactions
-
-    def __str__(self):
-        return f"Account({self.account_number}, {self.customer}, {self.balance}, {self.account_type})"
+    def __repr__(self) -> str:
+        return (
+            f"Account(account_number={self.account_number!r}, open_date={self.open_date!r}, "
+            f"running_totals={self.running_totals!r})"
+        )

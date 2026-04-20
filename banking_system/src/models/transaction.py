@@ -1,38 +1,31 @@
+"""Transaction model for BankingSystem."""
+
 from datetime import datetime
+from typing import Optional
 
 
 class Transaction:
-    def __init__(self, transaction_id, account, amount, transaction_type):
-        self.transaction_id = transaction_id
-        self.account = account
+    """A financial transaction between sender and receiver."""
+
+    def __init__(self, amount: float, sender: str, receiver: str, timestamp: Optional[datetime] = None):
+        """Create a transaction record."""
         self.amount = amount
-        self.transaction_type = transaction_type  # 'deposit', 'withdraw', 'transfer', etc.
-        self.timestamp = datetime.now()
-        self.status = "completed"
+        self.sender = sender
+        self.receiver = receiver
+        self.timestamp = timestamp or datetime.now()
 
-    def get_transaction_id(self):
-        """Get transaction ID"""
-        return self.transaction_id
+    @classmethod
+    def deposit_money(cls, amount: float, sender: str, receiver: str) -> "Transaction":
+        """Create a deposit transaction."""
+        return cls(abs(amount), sender, receiver)
 
-    def get_amount(self):
-        """Get the amount"""
-        return self.amount
+    @classmethod
+    def withdraw_money(cls, amount: float, sender: str, receiver: str) -> "Transaction":
+        """Create a withdrawal transaction."""
+        return cls(-abs(amount), sender, receiver)
 
-    def get_transaction_type(self):
-        """Get the transaction type"""
-        return self.transaction_type
-
-    def get_timestamp(self):
-        """Get the timestamp"""
-        return self.timestamp
-
-    def get_status(self):
-        """Get the status"""
-        return self.status
-
-    def set_status(self, status):
-        """Set the status"""
-        self.status = status
-
-    def __str__(self):
-        return f"Transaction({self.transaction_id}, {self.account.account_number}, {self.amount}, {self.transaction_type}, {self.timestamp})"
+    def __repr__(self) -> str:
+        return (
+            f"Transaction(amount={self.amount!r}, sender={self.sender!r}, receiver={self.receiver!r}, "
+            f"timestamp={self.timestamp!r})"
+        )

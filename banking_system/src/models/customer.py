@@ -1,46 +1,64 @@
-from datetime import datetime
+"""Customer model for BankingSystem."""
+
+from typing import ClassVar, List
 
 
 class Customer:
-    def __init__(self, customer_id, name, email):
-        self.customer_id = customer_id
-        self.name = name
-        self.email = email
-        self.created_date = datetime.now()
-        self.accounts = []
-        self.is_active = True
+    """A customer with accounts and contact information."""
 
-    def get_customer_id(self):
-        """Get customer ID"""
-        return self.customer_id
+    _customer_counter: ClassVar[int] = 0
 
-    def get_name(self):
-        """Get customer name"""
-        return self.name
+    def __init__(self, account_number: str, name: str, address: str, contact_number: str, email: str, password: str):
+        """Create a new customer record."""
+        self._account_number = account_number
+        self._name = name
+        self._address = address
+        self._contact_number = contact_number
+        self._email = email
+        self._password = password
+        self._accounts: List[str] = []
+        Customer._customer_counter += 1
 
-    def get_email(self):
-        """Get customer email"""
-        return self.email
+    @property
+    def account_number(self) -> str:
+        """The customer account identifier."""
+        return self._account_number
 
-    def add_account(self, account):
-        """Add an account to customer"""
-        self.accounts.append(account)
+    @property
+    def name(self) -> str:
+        """The customer full name."""
+        return self._name
 
-    def get_accounts(self):
-        """Get all accounts"""
-        return self.accounts
+    @property
+    def address(self) -> str:
+        """The customer address."""
+        return self._address
 
-    def deactivate(self):
-        """Deactivate the customer"""
-        self.is_active = False
+    @property
+    def contact_number(self) -> str:
+        """The customer's contact phone number."""
+        return self._contact_number
 
-    def activate(self):
-        """Activate the customer"""
-        self.is_active = True
+    @property
+    def email(self) -> str:
+        """The customer's email address."""
+        return self._email
 
-    def is_customer_active(self):
-        """Check if customer is active"""
-        return self.is_active
+    def add_account(self, account_number: str) -> None:
+        """Link an account to this customer."""
+        self._accounts.append(account_number)
 
-    def __str__(self):
-        return f"Customer({self.customer_id}, {self.name}, {self.email})"
+    def remove_account(self, account_number: str) -> None:
+        """Unlink an account from this customer."""
+        self._accounts = [value for value in self._accounts if value != account_number]
+
+    @classmethod
+    def total_number_of_customers(cls) -> int:
+        """Return the total number of created customers."""
+        return cls._customer_counter
+
+    def __repr__(self) -> str:
+        return (
+            f"Customer(account_number={self.account_number!r}, name={self.name!r}, "
+            f"address={self.address!r}, contact_number={self.contact_number!r}, email={self.email!r})"
+        )
