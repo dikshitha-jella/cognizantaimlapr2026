@@ -7,16 +7,15 @@ load_dotenv()
  
 class Config:
     def __init__(self):
-        self.app_env = os.getenv("APP_ENV", "development")
+        self.app_env = os.getenv("APP_ENV", "Development")
         self.resource_path = self.get_resource_path("data")
  
-   def get_resource_path(self) -> str:
-       if self.app_env == "production":
-            return f"src/resources/data.json"
- 
-        elif self.app_env == "development":
-            return f"src/resources/data.csv"
-       else:
-            return f"src/resources/data.txt"
+    def get_resource_path(self, resource_name) -> str:
+        if self.app_env == "production":
+            return f"src/resources/customers.json"
+        elif self.app_env == "Development":
+            return f"src/resources/customers.csv"
+        elif self.app_env == "Test":
+            return f"src/resources/customers.txt"
         else:
-            raise ValueError(f"Invalid APP_ENV value. Must be 'production', 'development', or 'testing'.")    
+            raise ValueError(f"Invalid APP_ENV value. Must be 'production', 'Development', or 'Test': {self.app_env}")

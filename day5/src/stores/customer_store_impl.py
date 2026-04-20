@@ -1,10 +1,15 @@
-from src.stores.customer_store import CustomerStore
+from stores.customer_store import CustomerStore
+from exceptions.customer_not_found import CustomerNotFound
+
 class CustomerStoreImpl(CustomerStore):
     def __init__(self):
         self.customers = []
 
     def add_customer(self, customer):
         self.customers.append(customer)
+
+    def get_all_customers(self):
+        return self.customers    
 
     def get_customer_by_id(self, customer_id):
         for customer in self.customers:

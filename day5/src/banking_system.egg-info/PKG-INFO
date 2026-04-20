@@ -9,6 +9,7 @@ Requires-Dist: faker>=13.3.4
 Requires-Dist: pydantic>=2.10.0
 Requires-Dist: python-dotenv>=0.21.0
 Requires-Dist: pandas>=2.0.0
+Requires-Dist: pydantic[email]>=2.10.0
 Provides-Extra: dev
 Requires-Dist: pytest>=7.2.0; extra == "dev"
 Requires-Dist: pytest-html>=4.2.0; extra == "dev"
