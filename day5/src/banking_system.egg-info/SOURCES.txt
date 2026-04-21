@@ -20,3 +20,4 @@ src/models/individual.py
 src/stores/customer_store.py
 src/stores/customer_store_impl.py
 src/utils/app.py
+src/utils/pipeline_runner.py
