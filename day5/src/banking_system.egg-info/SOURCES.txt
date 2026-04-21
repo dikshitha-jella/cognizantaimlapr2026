@@ -5,6 +5,10 @@ src/banking_system.egg-info/dependency_links.txt
 src/banking_system.egg-info/requires.txt
 src/banking_system.egg-info/top_level.txt
 src/configurations/conf.py
+src/dataloaders/customer_csv_dataloader.py
+src/dataloaders/customer_data_loader.py
+src/dataloaders/customer_json_data_loader.py
+src/dataloaders/customer_txt_data_loader.py
 src/exceptions/customer_not_found.py
 src/models/address.py
 src/models/company_type.py
