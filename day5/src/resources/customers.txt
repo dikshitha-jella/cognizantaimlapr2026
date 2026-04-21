@@ -54,6 +54,6 @@ Phone No: 9678543210
 
 Customer ID: 010
 First Name: Neha
-Last Name: Aggarwal
+Last Name: Aggarwaal
 Email: neha.aggarwal@gmail.com
 Phone No: 9822334455
